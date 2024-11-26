@@ -109,7 +109,7 @@ public class CommunicationHandler implements Runnable {
             messageToReceiver = messageContent.nextToken();
         } else {
             System.out.println(sender.getName()+" sent a message without a receiver attached. --" + LocalDateTime.now());
-            sender.getClientOutputStream().println("?-> Message format error: <receiver name> : <your message>");
+            sender.getClientOutputStream().println("?-> Message format error: <receiver name> #: <your message>");
             sender.getClientOutputStream().println("?-> Current logged in users: "+ ((loggedInClients.size() == 1) ? "You're the only one online. You can run multiple clients": loggedInClients));
             sender.getClientOutputStream().println("?-> Type 'bye' to exit");
             sender.getClientOutputStream().flush();
